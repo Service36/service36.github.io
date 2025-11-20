@@ -1,0 +1,20 @@
+title: Сервис36.рф
+description: Apple Device Repair Cases & Technical Notes (Voronezh)
+timezone: Europe/Moscow
+theme: minima
+
+collections:
+  cases:
+    output: true
+    permalink: /cases/:name/
+  notes:
+    output: true
+    permalink: /notes/:name/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
