@@ -3,19 +3,129 @@
 
 @import "minima";
 
+/* Базовая типографика под Apple */
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto;
-  background-color: #fafafa;
-  color: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, system-ui, -sans-serif;
+  background-color: #f5f5f7;
+  color: #111111;
   margin: 0;
-  padding: 0;
 }
 
-h1, h2, h3 {
-  font-weight: 600;
-  color: #000;
+.site-header,
+.site-footer {
+  background-color: #ffffff;
+  border-color: #d2d2d7;
 }
+
+.page-content {
+  padding: 2.5rem 1rem 3rem;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Заголовки */
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+/* Ссылки */
 
 a {
   color: #007aff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Каркас кейса */
+
+.case {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem 2.2rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+}
+
+.case-date {
+  margin-top: .25rem;
+  color: #6e6e73;
+  font-size: 0.9rem;
+}
+
+.case-footer {
+  margin-top: 2rem;
+}
+
+/* Список кейсов / устройств */
+
+.case-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0 0;
+}
+
+.case-list li {
+  margin-bottom: .6rem;
+}
+
+.case-list a {
+  font-weight: 500;
+}
+
+/* Грид устройств */
+
+.device-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.device-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.03);
+}
+
+.device-card h3 {
+  margin-top: 0;
+  margin-bottom: .25rem;
+}
+
+.device-card small {
+  color: #6e6e73;
+}
+
+/* TOC */
+
+.toc-box {
+  background: #f5f5f7;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0 2rem;
+  font-size: .95rem;
+}
+
+.toc-box strong {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+/* Notes */
+
+.note {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.03);
 }
