@@ -1,1 +1,64 @@
+---
+layout: default
+---
 
+<main class="case">
+  <header>
+    <h1>{{ page.title }}</h1>
+    {% if page.date %}
+      <p class="case-date">{{ page.date | date: "%d %B %Y" }}</p>
+    {% endif %}
+  </header>
+
+  {%- comment -%}
+  Автооглавление: в самом .md нужно вставить блок:
+
+  *Содержание*
+  {:toc}
+
+  Тогда сюда Kramdown подставит TOC.
+  {%- endcomment -%}
+
+  <article class="case-content">
+    {{ content }}
+  </article>
+
+  <footer class="case-footer">
+    <p><a href="{{ '/cases/' | relative_url }}">← Back to all cases</a></p>
+  </footer>
+</main>
+
+{%- comment -%}
+JSON-LD Schema.org: Service + LocalBusiness + конкретный ремонт.
+Часть данных берём из front matter страницы.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": {{ page.title | jsonify }},
+  "serviceType": "Apple device repair",
+  "areaServed": {
+    "@type": "City",
+    "name": "Voronezh"
+  },
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Сервис36.рф",
+    "image": "https://service36.ru/wp-content/uploads/Service36-logo.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Воронеж",
+      "streetAddress": "Кольцовская, 82"
+    },
+    "telephone": "+7-473-222-44-94",
+    "url": "https://service36.ru/"
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": {{ page.model | default: "Apple" | jsonify }}
+  },
+  "description": {{ page.seo_description | default: page.excerpt | strip_html | strip_newlines | jsonify }},
+  "category": {{ page.device | default: "iPhone repair" | jsonify }}
+}
+</script>
