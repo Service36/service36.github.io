@@ -1,1 +1,20 @@
+---
+layout: default
+---
 
+<main class="note">
+  <header>
+    <h1>{{ page.title }}</h1>
+    {% if page.date %}
+      <p class="case-date">{{ page.date | date: "%d %B %Y" }}</p>
+    {% endif %}
+  </header>
+
+  <article>
+    {{ content }}
+  </article>
+
+  <footer class="case-footer">
+    <p><a href="{{ '/notes/' | relative_url }}">← Back to all notes</a></p>
+  </footer>
+</main>
