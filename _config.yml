@@ -1,7 +1,8 @@
-title: Сервис36.рф
-description: Apple Device Repair Cases & Technical Notes (Voronezh)
+title: "Сервис36.рф"
+description: "Apple Device Repair Cases & Technical Notes (Voronezh)"
 timezone: Europe/Moscow
 theme: minima
+lang: ru
 
 collections:
   cases:
@@ -14,6 +15,7 @@ collections:
 markdown: kramdown
 kramdown:
   input: GFM
+  toc_levels: 2..3
 
 plugins:
   - jekyll-feed
