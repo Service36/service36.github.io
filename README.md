@@ -31,6 +31,8 @@ Everything is written from hands-on practice — no marketing, no filler.
 ## Live Site
 GitHub Pages: **https://service36.github.io**  
 Main site (RU): **https://service36.ru**
+Also writing in English on Medium:
+**https://medium.com/@denis_service36**
 
 ---
 
