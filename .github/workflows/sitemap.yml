@@ -1,1 +1,86 @@
 
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Generate sitemap.xml
+        run: |
+          echo "Generating sitemap.xml..."
+
+          BASE_URL="https://service36.github.io"
+
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+
+          # Root pages
+          echo "<url><loc>$BASE_URL/</loc></url>" >> sitemap.xml
+          echo "<url><loc>$BASE_URL/cases/</loc></url>" >> sitemap.xml
+          echo "<url><loc>$BASE_URL/notes/</loc></url>" >> sitemap.xml
+
+          # All markdown files
+          find . -type f -name "*.md" | while read file; do
+            # skip README.md and layouts
+            if [[ "$file" == *"README.md"* || "$file" == *"_layouts"* ]]; then
+              continue
+            fi
+
+            clean="${file#./}"
+            clean="${clean%.md}"
+
+            # /cases/*.md → /cases/<name>/
+            if [[ "$clean" == cases/* ]]; then
+              url="$BASE_URL/${clean}/"
+
+            # /_cases/*.md → /cases/<name>/
+            elif [[ "$clean" == _cases/* ]]; then
+              name="${clean#_cases/}"
+              url="$BASE_URL/cases/${name}/"
+
+            # /notes/*.md → /notes/<name>/
+            elif [[ "$clean" == notes/* ]]; then
+              url="$BASE_URL/${clean}/"
+
+            # /_notes/*.md → /notes/<name>/
+            elif [[ "$clean" == _notes/* ]]; then
+              name="${clean#_notes/}"
+              url="$BASE_URL/notes/${name}/"
+            else
+              continue
+            fi
+
+            echo "<url><loc>$url</loc></url>" >> sitemap.xml
+          done
+
+          echo "</urlset>" >> sitemap.xml
+
+      - name: Commit sitemap.xml
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add sitemap.xml
+          git commit -m "Auto-update sitemap" || echo "No changes"
+          git push
+
+      - name: Ping Google
+        run: |
+          curl -s "http://www.google.com/ping?sitemap=https://service36.github.io/sitemap.xml" || true
+
+      - name: Ping Yandex
+        run: |
+          curl -s "https://yandex.ru/ping?sitemap=https://service36.github.io/sitemap.xml" || true
