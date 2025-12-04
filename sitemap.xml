@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://service36.github.io/</loc></url>
-<url><loc>https://service36.github.io/cases/</loc></url>
-<url><loc>https://service36.github.io/notes/</loc></url>
-<url><loc>https://service36.github.io/notes/ipad-mini-6-battery-notes-en/</loc></url>
-<url><loc>https://service36.github.io/notes/2025-12-01-iphone15pro-battery-replacement-en-notes/</loc></url>
-<url><loc>https://service36.github.io/notes/2411-iphone14promax-housing-swap-battery-notes-en/</loc></url>
-<url><loc>https://service36.github.io/notes/2025-11-25-iphone13-no-image-display-notes-en/</loc></url>
-<url><loc>https://service36.github.io/notes/ipad-mini-6-battery-notes/</loc></url>
-<url><loc>https://service36.github.io/notes/2111-macbook-a1708-battery-issue-en/</loc></url>
-<url><loc>https://service36.github.io/notes/2025-12-03-iphone14-front-camera-notes-en/</loc></url>
-<url><loc>https://service36.github.io/cases/2025-11-25-iphone13-net-izobrazheniya-zamena-displeya-voronezh/</loc></url>
-<url><loc>https://service36.github.io/cases/2111-macbook-a1708-battery-issue/</loc></url>
-<url><loc>https://service36.github.io/cases/test-case/</loc></url>
-<url><loc>https://service36.github.io/cases/2011-ipad-mini-6-battery/</loc></url>
-<url><loc>https://service36.github.io/cases/2025-12-03-iphone14-front-camera-backglass-voronezh/</loc></url>
-<url><loc>https://service36.github.io/cases/2025-12-01-iphone15pro-battery-replacement-voronezh/</loc></url>
-<url><loc>https://service36.github.io/cases/2411-iphone14promax-housing-battery-repair-voronezh/</loc></url>
-<url><loc>https://service36.github.io/cases/index/</loc></url>
-<url><loc>https://service36.github.io/notes/index/</loc></url>
+  <url><loc>https://service36.github.io/_notes/ipad-mini-6-battery-notes-en.html</loc></url>
+  <url><loc>https://service36.github.io/_notes/2025-12-01-iphone15pro-battery-replacement-en-notes.html</loc></url>
+  <url><loc>https://service36.github.io/_notes/2411-iphone14promax-housing-swap-battery-notes-en.html</loc></url>
+  <url><loc>https://service36.github.io/_notes/2025-11-25-iphone13-no-image-display-notes-en.html</loc></url>
+  <url><loc>https://service36.github.io/_notes/ipad-mini-6-battery-notes.html</loc></url>
+  <url><loc>https://service36.github.io/_notes/2111-macbook-a1708-battery-issue-en.html</loc></url>
+  <url><loc>https://service36.github.io/_notes/2025-12-03-iphone14-front-camera-notes-en.html</loc></url>
+  <url><loc>https://service36.github.io/_cases/2025-11-25-iphone13-net-izobrazheniya-zamena-displeya-voronezh.html</loc></url>
+  <url><loc>https://service36.github.io/_cases/2111-macbook-a1708-battery-issue.html</loc></url>
+  <url><loc>https://service36.github.io/_cases/test-case.html</loc></url>
+  <url><loc>https://service36.github.io/_cases/2011-ipad-mini-6-battery.html</loc></url>
+  <url><loc>https://service36.github.io/_cases/2025-12-03-iphone14-front-camera-backglass-voronezh.html</loc></url>
+  <url><loc>https://service36.github.io/_cases/2025-12-01-iphone15pro-battery-replacement-voronezh.html</loc></url>
+  <url><loc>https://service36.github.io/_cases/2411-iphone14promax-housing-battery-repair-voronezh.html</loc></url>
+  <url><loc>https://service36.github.io/cases/index.html</loc></url>
+  <url><loc>https://service36.github.io/README.html</loc></url>
+  <url><loc>https://service36.github.io/_layouts/case.html.html</loc></url>
+  <url><loc>https://service36.github.io/_layouts/note.html.html</loc></url>
+  <url><loc>https://service36.github.io/index.html</loc></url>
+  <url><loc>https://service36.github.io/notes/index.html</loc></url>
 </urlset>
