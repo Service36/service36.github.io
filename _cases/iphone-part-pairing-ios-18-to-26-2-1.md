@@ -1,7 +1,10 @@
-# iPhone Display and Battery Pairing: From iOS 18 to the iOS 26.2.1 Failure
-
-> Canonical article (Russian):  
-> https://service36.ru/blog/privyazka-displeya-akkumulyatora-iphone-ios-262-2621/
+---
+layout: case
+title: "iPhone Display and Battery Pairing: iOS 18 → 26.2.1"
+date: 2026-01-28
+category: other
+canonical: https://service36.ru/blog/privyazka-displeya-akkumulyatora-iphone-ios-262-2621/
+---
 
 This document describes real-world behavior of iPhone display and battery pairing,
 based on hands-on repair practice — not theory or assumptions.
