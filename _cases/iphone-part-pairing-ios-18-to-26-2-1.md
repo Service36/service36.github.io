@@ -152,3 +152,4 @@ Apple has gone too far down the Right to Repair path to silently reverse course.
 - On iOS 26.2: pair parts before updating
 - On iOS 26.2.1: warn users and clients honestly
 - Do not treat this as part failure or technician error
+- 
