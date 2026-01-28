@@ -1,77 +1,125 @@
-# iOS 26.2.1 — iPhone Part Pairing Failure (Technical Notes)
+---
+title: "iOS 26.2.1 — iPhone Display & Battery Pairing Failure"
+date: 2026-01-28
+related_case: https://service36.ru/blog/privyazka-displeya-akkumulyatora-iphone-ios-262-2621/
+---
 
-> Canonical article (Russian):  
-> https://service36.ru/blog/privyazka-displeya-akkumulyatora-iphone-ios-262-2621/
+# iOS 26.2.1 — iPhone Display & Battery Pairing Failure (Technical Notes)
+
+These notes document real-world behavior of iPhone display and battery pairing
+observed in repair practice after the release of iOS 26.2.1.
+
+This is a technical record, not a policy discussion.
+
+---
 
 ## Scope
-Devices:
+
+**Devices**
 - iPhone 12 and newer
 
-Components:
-- Display
-- Battery
+**Components**
+- Display modules
+- Batteries
 
-System:
+**System**
 - Repair Assistant
-- Genuine / Genuine Used pairing
+- Genuine / Genuine Used pairing workflow
 
 ---
 
-## Known Good Behavior (≤ iOS 26.2)
+## Expected Behavior (≤ iOS 26.2)
 
-Repair Assistant successfully:
+On iOS versions up to and including **26.2**, Repair Assistant reliably:
+
 - paired genuine used displays
-- restored True Tone
+- restored True Tone after display pairing
 - paired genuine used batteries
-- restored Battery Health
-- paired service parts
-- accepted some diagnostic parts
+- restored Battery Health visibility
+- paired official Apple service parts
+- paired some diagnostic / third-party components
+
+No user-facing errors were reported in successful cases.
 
 ---
 
-## Broken Behavior (iOS 26.2.1)
+## Observed Behavior (iOS 26.2.1)
 
-Observed consistently:
-- Repair Assistant launches
-- diagnostics complete
-- pairing step fails silently
+On **iOS 26.2.1**, pairing fails consistently.
 
-Applies to:
-- genuine used parts
-- service parts
-- parts with original controllers and flexes
+Observed sequence:
+1. Repair Assistant launches normally
+2. Diagnostics complete without errors
+3. Pairing step does not complete
 
-No successful pairing cases observed.
+This behavior applies to:
+- genuine used displays
+- displays with original top sensor flex cables
+- official Apple service displays
+- genuine used batteries
 
 ---
 
 ## Symptoms
 
 - “Unknown Part” warning persists
-- True Tone unavailable
-- Battery Health unavailable
-- No user-facing error explaining failure
+- True Tone remains unavailable
+- Battery Health remains unavailable
+- No explicit error message is shown to the user
+
+---
+
+## What Is Not the Cause
+
+Based on repeated testing, the issue is **not** caused by:
+
+- defective components
+- non-original parts (the issue affects genuine parts)
+- missing sensor flex cables
+- technician error
+- incomplete installation
 
 ---
 
 ## Likely Failure Points (Hypotheses)
 
-- backend eligibility check failure
-- request/response mismatch between OS and Apple servers
+Based on behavior patterns, the failure likely occurs at one of the following stages:
+
+- backend eligibility validation failure
+- mismatch between OS-side request and server-side validation logic
 - changed pairing flags not handled server-side
-- silent rejection without error propagation
+- silent rejection without error propagation to the UI
+
+At present, no client-side workaround exists.
 
 ---
 
-## Important Notes
+## Policy Consistency Check
 
-- This behavior contradicts Apple’s published repair policy
-- No documentation indicates an intentional change
-- Behavior matches previous Apple pairing regressions
+This behavior contradicts Apple’s previously announced policy allowing:
+- reuse of genuine used parts
+- pairing via Repair Assistant
+- marking parts as *Genuine Used*
+
+No documentation or release notes indicate an intentional rollback.
 
 ---
 
-## Recommendation
+## Operational Recommendation
 
-Treat iOS 26.2.1 as a **broken release** for part pairing.
-Do not assume policy changes until officially documented.
+Until further notice:
+
+- treat iOS 26.2.1 as a **broken release** for part pairing
+- avoid updating devices unnecessarily
+- on iOS 26.2, complete pairing before updating
+- clearly inform users and clients of the limitation
+
+---
+
+## Status
+
+**Current state:** Unresolved  
+**Workaround:** None  
+**Expected resolution:** Future iOS update or server-side fix  
+
+This document will be updated if behavior changes.
